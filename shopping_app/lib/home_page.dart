@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'product_page.dart';
 import 'product_grid.dart';
 import 'hot_offers.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
@@ -15,7 +16,6 @@ class MyHomePage extends StatefulWidget {
   // used by the build method of the State. Fields in a Widget subclass are
   // always marked "final".
 
-
   @override
   State<MyHomePage> createState() => _MyHomePageState();
 }
@@ -25,7 +25,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Shopping App'),
+        title: Text(AppLocalizations.of(context)!.appTitle),
       ),
       body: SingleChildScrollView(
         child: Padding(
@@ -33,18 +33,18 @@ class _MyHomePageState extends State<MyHomePage> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Text(
-                'Our Products',
-                style: TextStyle(fontSize: 25),
+              Text(
+                AppLocalizations.of(context)!.ourProducts,
+                style: Theme.of(context).textTheme.headlineMedium,
               ),
               const SizedBox(height: 10),
               const ProductPageView(),
               const SizedBox(height: 10),
               const ProductGridView(),
               const SizedBox(height: 10),
-              const Text(
-                'Hot Offers',
-                style: TextStyle(fontSize: 25,),
+              Text(
+                AppLocalizations.of(context)!.hotOffers,
+                style: Theme.of(context).textTheme.headlineMedium,
               ),
               const SizedBox(height: 10),
               const HotOffersList(),

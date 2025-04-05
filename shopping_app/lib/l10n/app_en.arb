@@ -1,0 +1,18 @@
+{
+    "appTitle": "Shopping App",
+    "signUp": "Sign Up",
+    "fullName": "Full Name",
+    "email": "Email",
+    "password": "Password",
+    "confirmPassword": "Confirm Password",
+    "success": "Success",
+    "accountCreated": "Account created successfully",
+    "close": "Close",
+    "ourProducts": "Our Products",
+    "hotOffers": "Hot Offers",
+    "shoppingCart": "Shopping Cart",
+    "errorCapitalLetter": "First letter must be capitalized",
+    "errorEmailFormat": "Email must contain @",
+    "errorPasswordLength": "Password must be at least 6 characters",
+    "errorPasswordMatch": "Passwords do not match"
+} 

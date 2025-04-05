@@ -1,0 +1,18 @@
+{
+    "appTitle": "تطبيق التسوق",
+    "signUp": "تسجيل",
+    "fullName": "الاسم الكامل",
+    "email": "البريد الإلكتروني",
+    "password": "كلمة المرور",
+    "confirmPassword": "تأكيد كلمة المرور",
+    "success": "نجاح",
+    "accountCreated": "تم إنشاء الحساب بنجاح",
+    "close": "إغلاق",
+    "ourProducts": "منتجاتنا",
+    "hotOffers": "عروض ساخنة",
+    "shoppingCart": "عربة التسوق",
+    "errorCapitalLetter": "يجب أن يبدأ الاسم بحرف كبير",
+    "errorEmailFormat": "يجب أن يحتوي البريد الإلكتروني على @",
+    "errorPasswordLength": "يجب أن تكون كلمة المرور 6 أحرف على الأقل",
+    "errorPasswordMatch": "كلمات المرور غير متطابقة"
+} 

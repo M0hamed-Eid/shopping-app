@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shopping_app/home_page.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 // Add this custom route class at the top of the file
 class FadePageRoute<T> extends PageRoute<T> {
@@ -52,20 +53,18 @@ class _SignUpPageState extends State<SignUpPage> {
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
-        title: const Text('Success'),
-        content: const Text('Account created successfully'),
+        title: Text(AppLocalizations.of(context)!.success),
+        content: Text(AppLocalizations.of(context)!.accountCreated),
         actions: [
           TextButton(
             onPressed: () {
-              Navigator.pop(context); // Close dialog
+              Navigator.pop(context);
               Navigator.pushReplacement(
                 context,
-                FadePageRoute(
-                  child: const MyHomePage(),
-                ),
+                FadePageRoute(child: const MyHomePage()),
               );
             },
-            child: const Text('Close'),
+            child: Text(AppLocalizations.of(context)!.close),
           ),
         ],
       ),
@@ -85,7 +84,7 @@ class _SignUpPageState extends State<SignUpPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Sign Up'),
+        title: Text(AppLocalizations.of(context)!.signUp),
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
       ),
       body: SingleChildScrollView(
@@ -97,9 +96,9 @@ class _SignUpPageState extends State<SignUpPage> {
             children: [
               TextFormField(
                 controller: _fullNameController,
-                decoration: const InputDecoration(
-                  labelText: 'Full Name',
-                  border: OutlineInputBorder(),
+                decoration: InputDecoration(
+                  labelText: AppLocalizations.of(context)!.fullName,
+                  border: const OutlineInputBorder(),
                 ),
                 validator: (value) {
                   if (value == null || value.isEmpty) {
@@ -107,8 +106,8 @@ class _SignUpPageState extends State<SignUpPage> {
                   }
                   if (value[0] != value[0].toUpperCase()) {
                     _showErrorSnackBar(
-                        'First letter of name must be capitalized');
-                    return 'First letter must be capitalized';
+                        AppLocalizations.of(context)!.errorCapitalLetter);
+                    return AppLocalizations.of(context)!.errorCapitalLetter;
                   }
                   return null;
                 },
@@ -116,17 +115,17 @@ class _SignUpPageState extends State<SignUpPage> {
               const SizedBox(height: 16),
               TextFormField(
                 controller: _emailController,
-                decoration: const InputDecoration(
-                  labelText: 'Email',
-                  border: OutlineInputBorder(),
+                decoration: InputDecoration(
+                  labelText: AppLocalizations.of(context)!.email,
+                  border: const OutlineInputBorder(),
                 ),
                 validator: (value) {
                   if (value == null || value.isEmpty) {
                     return 'Please enter your email';
                   }
                   if (!value.contains('@')) {
-                    _showErrorSnackBar('Email must contain @');
-                    return 'Email must contain @';
+                    _showErrorSnackBar(AppLocalizations.of(context)!.errorEmailFormat);
+                    return AppLocalizations.of(context)!.errorEmailFormat;
                   }
                   return null;
                 },
@@ -134,9 +133,9 @@ class _SignUpPageState extends State<SignUpPage> {
               const SizedBox(height: 16),
               TextFormField(
                 controller: _passwordController,
-                decoration: const InputDecoration(
-                  labelText: 'Password',
-                  border: OutlineInputBorder(),
+                decoration: InputDecoration(
+                  labelText: AppLocalizations.of(context)!.password,
+                  border: const OutlineInputBorder(),
                 ),
                 obscureText: true,
                 validator: (value) {
@@ -145,8 +144,8 @@ class _SignUpPageState extends State<SignUpPage> {
                   }
                   if (value.length < 6) {
                     _showErrorSnackBar(
-                        'Password must be at least 6 characters');
-                    return 'Password must be at least 6 characters';
+                        AppLocalizations.of(context)!.errorPasswordLength);
+                    return AppLocalizations.of(context)!.errorPasswordLength;
                   }
                   return null;
                 },
@@ -154,9 +153,9 @@ class _SignUpPageState extends State<SignUpPage> {
               const SizedBox(height: 16),
               TextFormField(
                 controller: _confirmPasswordController,
-                decoration: const InputDecoration(
-                  labelText: 'Confirm Password',
-                  border: OutlineInputBorder(),
+                decoration: InputDecoration(
+                  labelText: AppLocalizations.of(context)!.confirmPassword,
+                  border: const OutlineInputBorder(),
                 ),
                 obscureText: true,
                 validator: (value) {
@@ -164,8 +163,8 @@ class _SignUpPageState extends State<SignUpPage> {
                     return 'Please confirm your password';
                   }
                   if (value != _passwordController.text) {
-                    _showErrorSnackBar('Passwords do not match');
-                    return 'Passwords do not match';
+                    _showErrorSnackBar(AppLocalizations.of(context)!.errorPasswordMatch);
+                    return AppLocalizations.of(context)!.errorPasswordMatch;
                   }
                   return null;
                 },
