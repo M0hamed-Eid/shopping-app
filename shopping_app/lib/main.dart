@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shopping_app/home_page.dart';
+import 'package:shopping_app/signup_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -29,11 +29,11 @@ class MyApp extends StatelessWidget {
         //
         // This works for code too, not just values: Most code changes can be
         // tested with just a hot reload.
-        colorScheme: ColorScheme.fromSeed(seedColor: const Color.fromARGB(255, 133, 65, 65)),
+        colorScheme: ColorScheme.fromSeed(
+            seedColor: const Color.fromARGB(255, 133, 65, 65)),
         useMaterial3: true,
       ),
-      home: const MyHomePage(),
+      home: const SignUpPage(),
     );
   }
 }
-
