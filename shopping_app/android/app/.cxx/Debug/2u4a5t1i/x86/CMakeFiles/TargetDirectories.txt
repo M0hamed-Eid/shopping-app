@@ -1,0 +1,2 @@
+D:/My_GitHub/Flutter Sprints/shopping-app/shopping_app/android/app/.cxx/Debug/2u4a5t1i/x86/CMakeFiles/edit_cache.dir
+D:/My_GitHub/Flutter Sprints/shopping-app/shopping_app/android/app/.cxx/Debug/2u4a5t1i/x86/CMakeFiles/rebuild_cache.dir

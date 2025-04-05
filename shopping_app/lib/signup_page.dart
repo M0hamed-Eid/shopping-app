@@ -1,6 +1,39 @@
 import 'package:flutter/material.dart';
 import 'package:shopping_app/home_page.dart';
 
+// Add this custom route class at the top of the file
+class FadePageRoute<T> extends PageRoute<T> {
+  FadePageRoute({
+    required this.child,
+  });
+
+  final Widget child;
+
+  @override
+  Color get barrierColor => Colors.transparent;
+
+  @override
+  String? get barrierLabel => null;
+
+  @override
+  bool get maintainState => true;
+
+  @override
+  Duration get transitionDuration => const Duration(milliseconds: 500);
+
+  @override
+  Widget buildPage(
+    BuildContext context,
+    Animation<double> animation,
+    Animation<double> secondaryAnimation,
+  ) {
+    return FadeTransition(
+      opacity: animation,
+      child: child,
+    );
+  }
+}
+
 class SignUpPage extends StatefulWidget {
   const SignUpPage({super.key});
 
@@ -27,7 +60,9 @@ class _SignUpPageState extends State<SignUpPage> {
               Navigator.pop(context); // Close dialog
               Navigator.pushReplacement(
                 context,
-                MaterialPageRoute(builder: (context) => const MyHomePage()),
+                FadePageRoute(
+                  child: const MyHomePage(),
+                ),
               );
             },
             child: const Text('Close'),
